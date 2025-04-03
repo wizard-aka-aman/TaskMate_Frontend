@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="col mb-2" *ngFor="let item of data">
+        <div class="card custom-card d-flex flex-row align-items-center shadow-sm border-0">
+          <div class="card-body flex-grow-1">
+            <h5 class="card-title fw-bold text-light fs-3" >{{ item.item.name }}</h5>
+            <p class="card-text text-secondary fs-5">  {{ item.item.description }}</p>
+            <p class="card-text text-white-50 fs-3 " style="position: absolute; right: 20px; top: 0;" >  {{ item.status }}</p>
+            <p class="card-text text-white-50 fs-4 ">Created At: {{ item.item.dateandtime | date:'MMM d, y, h:mm:ss a' }} </p>
+            <p class="card-text text-white-50 fs-4 "> Completed Before : {{ item.item.completed  | date:'MMM d, y, h:mm:ss a' }} </p>
+            <p class="card-text text-white-50 fs-4 ">NotifyBefore : {{ item.item.notifyBefore}} </p>
+          </div>
+        </div>
+      </div>
+      
+     <ng-container *ngIf="isData">
+      <div class="btn btn-secondary" (click)="clear()">Clear History</div>
+     </ng-container>
+</div>

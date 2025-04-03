@@ -1,0 +1,34 @@
+
+
+<div class="container">
+        <div class="card custom-card d-flex flex-row align-items-center shadow-sm border-0 p-4 bg-dark text-light">
+            <div class="card-body flex-grow-1">
+                <h5 class="card-title fw-bold fs-3">Task Details</h5>
+                
+                <div class="mb-3">
+                    <label for="name" class="form-label fs-5">Name:</label>
+                    <input type="text" class="form-control" [(ngModel)]="data.name" name="name">
+                </div>
+    
+                <div class="mb-3">
+                    <label for="description" class="form-label fs-5">Description:</label>
+                    <input type="text" class="form-control" [(ngModel)]="data.description" name="description">
+                </div>
+    
+                <div class="mb-3">
+                    <label for="completed" class="form-label fs-5">Completed:</label>
+                    <input type="datetime-local" class="form-control" [(ngModel)]="data.completed" name="completed">
+                </div>
+    
+                <div class="mb-3">
+                    <label for="notifyBefore" class="form-label fs-5">Notify Before:</label>
+                    <input type="time" class="form-control" [(ngModel)]="data.notifyBefore" name="notifyBefore">
+                </div>
+    
+                <button class="btn btn-outline-light w-100" (click)="getSubmit()">Submit</button>
+            </div>
+        </div>
+        
+        <!-- <pre class="text-light mt-3">{{ data | json }}</pre> -->
+    </div>
+    

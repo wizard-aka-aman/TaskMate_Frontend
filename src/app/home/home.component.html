@@ -1,0 +1,78 @@
+<!-- Navbar -->
+
+<br>
+  <ng-container *ngIf="!isEmpty">
+    <span class=" d-flex justify-content-center align-items-center">
+      <div class="input-group d-flex justify-content-center align-items-center">
+          <span class="input-group-text d-flex justify-content-center align-items-center">Search</span>
+          <input type="text" class="form-control" [(ngModel)]="search" name="search" placeholder="Search..." aria-label="Search">
+      </div>
+  </span>
+  </ng-container>
+  <ng-container *ngIf="isEmpty">
+    <span class=" d-flex justify-content-center align-items-center">
+      <div class="input-group d-flex justify-content-center align-items-center">
+          <span class=" d-flex justify-content-center fs-1 w-auto align-items-center">Nothing To Display</span>
+          
+      </div>
+  </span>
+  </ng-container>
+  <br><br> 
+  <div class="container my-4"> 
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+
+
+
+      <ng-container *ngIf="!isGetData">
+          <div class="col" *ngFor=" let item of data | filter:search">
+            <div class="card custom-card d-flex flex-row align-items-center">
+              <div class="card-body flex-grow-1">
+                <h5 class="card-title">{{ item.name }}</h5>
+                <p class="card-text">{{ item.description }}</p>
+              </div>
+              <!-- this is a another method which uses the ID from URL  -->
+              <!-- <a routerLink="/edit/{{item.id}}" class="text-white" style="text-decoration: none;">
+                <button class="btn custom-btn ms-auto me-3" >Edit</button>
+              </a> --> 
+    
+              
+              <!-- this is a another method which uses the ID from BehaviorSubject   -->
+              <a routerLink="/edit" (click)="getId(item.id , item.name , item.description,item.completed ,item.notifyBefore)" class="text-white" style="text-decoration: none;">
+              <button class="btn custome-btn ms-auto me-3" >Edit</button>
+            </a>
+              <button class="btn custom-btn ms-auto me-3  " (click)="delete(item.id)">Completed</button>
+ 
+              <ng-container *ngIf="item.isFavorite">
+                <a >
+                  <button class="btn custom-btn ms-auto" (click)="(Removefavorite(item.id))" style="width: 50px;">
+                    <i class="fa-solid fa-heart" style="color: #ff0000;"></i>
+                  </button>
+                </a>
+              </ng-container>
+
+              <ng-container  *ngIf="!item.isFavorite">
+                <a >
+                  <button class="btn custom-btn ms-auto" (click)="(favorite(item.id))" style="width: 50px;">
+                    <i class="fa-regular fa-heart" style="color: #ff0000;"></i>
+                  </button>
+                </a>
+              </ng-container>
+
+            </div>
+          </div>
+      </ng-container>
+
+     <ng-container *ngIf="isGetData">
+      <div class="card is-loading">
+        <div class="image"></div> 
+      </div>
+      <div class="card is-loading ">
+        <div class="image"></div> 
+      </div> 
+     </ng-container>
+
+
+
+    </div>
+  </div>
+  

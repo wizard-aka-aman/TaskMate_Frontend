@@ -1,0 +1,32 @@
+<div class="container my-4">
+  <h1>FAVORITE</h1><br> 
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+
+
+      <ng-container *ngIf="!isGetData"> 
+          <div class="col" *ngFor="let item of data">
+            
+            <div class="card custom-card d-flex flex-row align-items-center">
+              <div class="card-body flex-grow-1">
+                <h5 class="card-title">{{ item.name }}</h5>
+                <p class="card-text">{{ item.description }}</p>
+              </div>
+              
+            </div>
+          </div>
+      </ng-container>
+
+     <ng-container *ngIf="isGetData">
+      <div class="card is-loading">
+        <div class="image"></div> 
+      </div>
+      <div class="card is-loading ">
+        <div class="image"></div> 
+      </div> 
+     </ng-container>
+
+
+
+    </div>
+  </div>
+ 

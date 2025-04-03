@@ -1,0 +1,109 @@
+
+
+
+ 
+.input-group {
+    width: 50%;
+    max-width: 400px;
+    border: 2px solid white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.input-group-text {
+    background-color: black;
+    color: white;
+    border: none;
+    width: 100px;
+    text-align: center;
+}
+
+.form-control {
+    background-color: #c7c7c7;
+    color: rgb(0, 0, 0);
+    border: none;
+}
+
+.form-control:focus {
+    background-color: #c7c7c7;
+    color: rgb(0, 0, 0);
+    border: none;
+    box-shadow: none;
+}
+
+
+/* Custom card design */
+.custom-card {
+    background: linear-gradient(145deg, #2a2a2a, #1e1e1e); /* Dark gradient */
+    color: white;
+    border: 1px solid #444;
+    border-radius: 12px;
+    box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.1); /* Light glow effect */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Hover effect */
+  .custom-card:hover {
+    transform: translateY(-6px); 
+    box-shadow: 6px 6px 15px rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Card text */
+  .card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .card-text {
+    color: #b5b5b5;
+  }
+  
+  /* Custom delete button */
+  .custom-btn {
+    background-color: #444;
+    color: white;
+    border: 1px solid #666;
+    width: 100px;
+    height: 40px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .custom-btn:hover {
+    background-color: #666;
+    color: #fff;
+    border-color: #999;
+  }
+  
+  /* Make button stick to the right */
+  .ms-auto {
+    margin-left: auto;
+  }
+
+
+  .card.is-loading .image  {
+  background: #eee;
+  background: linear-gradient(110deg, #dbdbdb 8%, #e8e8e8 18%, #e0e0e0 33%);
+  border-radius: 5px;
+  background-size: 200% 100%;
+  animation: 2s shine linear infinite;
+}
+
+.card.is-loading .image {
+  height: 129px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+ 
+@keyframes shine {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

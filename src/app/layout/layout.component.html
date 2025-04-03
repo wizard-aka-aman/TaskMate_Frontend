@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg  ">
+    <div class="container">
+        <!-- Brand Logo -->
+        <a class="navbar-brand loogo"  [routerLink]="['/home']" [queryParams]="{ name: userName }">TASKMATE</a>
+
+        <!-- Navbar Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+            <ul class="navbar-nav w-100 d-flex justify-content-around align-items-center">
+                <li class="nav-item">
+                    <p class="text-light fs-5 mt-3 me-1"  > Welcome , {{userName}}  ! </p>
+                </li>
+                
+                <!-- <li class="nav-item">
+                    <a class="nav-link " routerLink="login"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+                </li>a
+                <li class="nav-item">
+                    <a class="nav-link " routerLink="register"><i class="fa-solid fa-registered"></i> Register</a>
+                </li> -->
+                
+                <li class="nav-item">
+                    <a class="nav-link " [routerLink]="['/create']" [queryParams]="{ name: userName }" ><i class="fas fa-plus-circle pe-2"></i>Create</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="history" ><i class="fas fa-bell pe-2"></i>History</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="favorite"><i class="fas fa-heart pe-2"></i>Favorite</a>
+                </li>
+                  
+                <li class="nav-item">
+                    <a class="nav-link " style="cursor: pointer;"  (click)="onLogout()" > <i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+                </li>
+                 
+            </ul> 
+        </div>
+    </div> 
+</nav>
+<router-outlet></router-outlet>

@@ -1,0 +1,12 @@
+.custom-card {
+    background-color: #333; /* Dark Grey */
+    color: white;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+  }
+  
