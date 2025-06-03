@@ -66,17 +66,17 @@ export class ServiceService {
   }
 
   postEmail(item:any){
-    return this.http.post("${this.baseUrl}/api/Email/SendEmail",item);
+    return this.http.post(`${this.baseUrl}/api/Email/SendEmail`,item);
   }
   postSemiRegister(item:any){
-    return this.http.post("${this.baseUrl}/semiregister",item);
+    return this.http.post(`${this.baseUrl}/semiregister`,item);
   }
   OTP(item:any){
-    return this.http.post("${this.baseUrl}/getotp",item);
+    return this.http.post(`${this.baseUrl}/getotp`,item);
   }
 
   postJob(item : any){
-    return this.http.post("${this.baseUrl}/api/Job/CreateScheduleJob",item);
+    return this.http.post(`${this.baseUrl}/api/Job/CreateScheduleJob`,item);
   }
 
 
