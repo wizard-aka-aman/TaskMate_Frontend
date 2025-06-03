@@ -10,7 +10,7 @@ import {jwtDecode} from 'jwt-decode';
 export class ServiceService {
 
   // baseUrl = 'https://localhost:7165'
-  baseUrl = 'https://wizardamantaskmate.netlify.app'
+  baseUrl = 'https://nopenag383.bsite.net'
   constructor(private http: HttpClient) { 
    
   }
