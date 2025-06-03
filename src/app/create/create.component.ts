@@ -6,7 +6,7 @@ import {   ToastrService } from 'ngx-toastr';
 import {   Router } from '@angular/router';
 @Component({
   selector: 'app-create',
-  imports: [FormsModule , JsonPipe],
+  imports: [FormsModule ],
   templateUrl: './create.component.html',
   styleUrl: './create.component.css'
 })

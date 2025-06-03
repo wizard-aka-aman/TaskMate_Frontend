@@ -9,6 +9,8 @@ import {jwtDecode} from 'jwt-decode';
 })
 export class ServiceService {
 
+  // baseUrl = 'https://localhost:7165'
+  baseUrl = 'https://wizardamantaskmate.netlify.app'
   constructor(private http: HttpClient) { 
    
   }
@@ -27,54 +29,54 @@ export class ServiceService {
   //   return this.response$.getValue().length > 0;
   // }
   getAllItems(username:string){
-   return  this.http.get("https://localhost:7165/Item?name="+username);
+   return  this.http.get(`${this.baseUrl}/Item?name=`+username);
   }
   postItem(item:any){
-    return this.http.post("https://localhost:7165/Item",item);
+    return this.http.post(`${this.baseUrl}/Item`,item);
   }
   deleteItem(id:number){
-    return this.http.delete("https://localhost:7165/Item/"+id);
+    return this.http.delete(`${this.baseUrl}/Item/`+id);
   }
   putItem(id:number , item :any){
-    return this.http.put("https://localhost:7165/Item/"+id,item);
+    return this.http.put(`${this.baseUrl}/Item/`+id,item);
   }
   getAllFavo(username:string){
-    return this.http.get("https://localhost:7165/Item/GetAllFavo?name="+username);
+    return this.http.get(`${this.baseUrl}/Item/GetAllFavo?name=`+username);
   }
   addFavo(id:number){
-    return this.http.get("https://localhost:7165/Item/AddFavorite/"+id);
+    return this.http.get(`${this.baseUrl}/Item/AddFavorite/`+id);
   }
   RemoveFavo(id:number){
-    return this.http.get("https://localhost:7165/Item/RemoveFavorite/"+id);
+    return this.http.get(`${this.baseUrl}/Item/RemoveFavorite/`+id);
   }
   getHistory(username:string){
-    return this.http.get("https://localhost:7165/History/GetAllHistory?name="+username);
+    return this.http.get(`${this.baseUrl}/History/GetAllHistory?name=`+username);
   }
   clearHistory(){
-    return this.http.get("https://localhost:7165/History/ClearAllHistory");
+    return this.http.get(`${this.baseUrl}/History/ClearAllHistory`);
   }
   login(formdata : any){
-    return this.http.post("https://localhost:7165/login" , formdata);
+    return this.http.post(`${this.baseUrl}/login` , formdata);
   }
   register(formdata : any){
-    return this.http.post("https://localhost:7165/register" , formdata);
+    return this.http.post(`${this.baseUrl}/register` , formdata);
   }
   logout(){
-    return this.http.get("https://localhost:7165/logout");
+    return this.http.get(`${this.baseUrl}/logout`);
   }
 
   postEmail(item:any){
-    return this.http.post("https://localhost:7165/api/Email/SendEmail",item);
+    return this.http.post("${this.baseUrl}/api/Email/SendEmail",item);
   }
   postSemiRegister(item:any){
-    return this.http.post("https://localhost:7165/semiregister",item);
+    return this.http.post("${this.baseUrl}/semiregister",item);
   }
   OTP(item:any){
-    return this.http.post("https://localhost:7165/getotp",item);
+    return this.http.post("${this.baseUrl}/getotp",item);
   }
 
   postJob(item : any){
-    return this.http.post("https://localhost:7165/api/Job/CreateScheduleJob",item);
+    return this.http.post("${this.baseUrl}/api/Job/CreateScheduleJob",item);
   }
 
 

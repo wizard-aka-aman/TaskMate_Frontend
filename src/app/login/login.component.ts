@@ -40,7 +40,7 @@ onSubmit(){
       this.router.navigate(['/home'], { queryParams: { name: naam } });
     },
     error: (error) => {
-      this.toastr.error(error.error , "Error")
+      this.toastr.error("Server Error" , "Error")
       console.log(error.error); // "Invalid Credentials!!"
     }
   })

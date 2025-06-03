@@ -22,6 +22,8 @@ export class LayoutComponent {
       next: (res) => {
       console.log(res);
       localStorage.removeItem("userName");
+      localStorage.removeItem("password");
+      localStorage.removeItem("username");
       localStorage.removeItem("email");
       localStorage.removeItem("jwt");
       this.router.navigateByUrl('/login')
